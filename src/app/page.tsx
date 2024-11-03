@@ -18,15 +18,10 @@ export default function Home() {
             revalidateOnReconnect: false,
         }
     );
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         const res = await fetch('http://localhost:8000/blogs');
-    //         const data = await res.json();
-    //         console.log('chekc res: ', data);
-    //     };
-    //     fetchData();
-    // }, []);
-    console.log('check data: ', data);
+
+    if (!data) {
+         return <div>loading....</div>
+    }
     return (
         <div>
             <div>{data?.length}</div>
@@ -47,7 +42,7 @@ export default function Home() {
                     </Link>
                 </li>
             </ul>
-            <AppTable />
+            <AppTable blogs={data} />
 
             {/* <div className={styles.description}>
                 <p>Hello world with Nextjs 13 & Hỏi Dân IT</p>
