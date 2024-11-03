@@ -1,14 +1,28 @@
 import Image from 'next/image';
 import styles from './page.module.css';
 import Link from 'next/link';
+import x from '@/styles/app.module.css';
+import y from '@/styles/hoidanit.module.css';
 
 export default function Home() {
     return (
         <main className={styles.main}>
             <div>
                 <ul>
+                    <li className={y['red']}>
+                        <Link href={'/facebook'}>
+                            <span>Facebook</span>
+                        </Link>
+                    </li>
+                    <li className = {x['red']}>
+                        <Link href={'/facebook'}>
+                            <span>Youtube</span>
+                        </Link>
+                    </li>
                     <li>
-                        <Link href={'/facebook'}>Facebook</Link>
+                        <Link href={'/facebook'}>
+                            <span>Facebook</span>
+                        </Link>
                     </li>
                 </ul>
             </div>
@@ -19,7 +33,7 @@ export default function Home() {
                         href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
                         target="_blank"
                         rel="noopener noreferrer">
-                        By{' '}
+                        By
                         <Image
                             src="/vercel.svg"
                             alt="Vercel Logo"

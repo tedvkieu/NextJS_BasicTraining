@@ -1,7 +1,5 @@
 const Kieune = () => {
-    return (
-        <div>hiiih</div>
-    )
-}
+    return <div>hiiih</div>;
+};
 
 export default Kieune;

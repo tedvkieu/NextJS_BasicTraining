@@ -9,9 +9,9 @@ const Facebook = () => {
     };
 
     return (
-        <div>
-            Facebook
-            <div onClick={() => handleButton()}>Button backhome</div>
+        <div className="red">
+            Facebook page
+            <button onClick={() => handleButton()}>Button backhome</button>
         </div>
     );
 };
