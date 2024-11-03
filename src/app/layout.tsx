@@ -22,7 +22,7 @@ export default function RootLayout({
                 
                 <footer>Footer duong van kieu</footer> */}
                 <AppHeader />
-                {children}
+                <div className="container"> {children}</div>
                 <AppFooter />
             </body>
         </html>
