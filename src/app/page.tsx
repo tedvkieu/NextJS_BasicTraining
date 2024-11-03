@@ -3,30 +3,31 @@ import styles from './page.module.css';
 import Link from 'next/link';
 import x from '@/styles/app.module.css';
 import y from '@/styles/hoidanit.module.css';
+import AppTable from '@/components/app.table';
 
 export default function Home() {
     return (
-        <main className={styles.main}>
-            <div>
-                <ul>
-                    <li className={y['red']}>
-                        <Link href={'/facebook'}>
-                            <span>Facebook</span>
-                        </Link>
-                    </li>
-                    <li className = {x['red']}>
-                        <Link href={'/facebook'}>
-                            <span>Youtube</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href={'/facebook'}>
-                            <span>Facebook</span>
-                        </Link>
-                    </li>
-                </ul>
-            </div>
-            <div className={styles.description}>
+        <div className="container">
+            <ul>
+                <li className={y['red']}>
+                    <Link href={'/facebook'}>
+                        <span>Facebook</span>
+                    </Link>
+                </li>
+                <li className={x['red']}>
+                    <Link href={'/facebook'}>
+                        <span>Youtube</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link href={'/facebook'}>
+                        <span>Facebook</span>
+                    </Link>
+                </li>
+            </ul>
+            <AppTable />
+
+            {/* <div className={styles.description}>
                 <p>Hello world with Nextjs 13 & Hỏi Dân IT</p>
                 <div>
                     <a
@@ -110,7 +111,7 @@ export default function Home() {
                         with Vercel.
                     </p>
                 </a>
-            </div>
-        </main>
+            </div> */}
+        </div>
     );
 }
