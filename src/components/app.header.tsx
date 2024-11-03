@@ -4,13 +4,16 @@ import Link from 'next/link';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const AppHeader = () => {
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
             <Container>
-                <Navbar.Brand href="/">Teddvkieu</Navbar.Brand>
+                <Navbar.Brand>
+                    <Link href={'/'} className="navbar-brand">
+                        Tedvkieu
+                    </Link>
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
@@ -19,6 +22,9 @@ const AppHeader = () => {
                         </Link>
                         <Link href={'/youtube'} className="nav-link">
                             Youtube
+                        </Link>
+                        <Link href={'/tiktok'} className="nav-link">
+                            Tik tok
                         </Link>
 
                         <Nav.Link href={'#link'}>Link</Nav.Link>

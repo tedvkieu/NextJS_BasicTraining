@@ -4,32 +4,46 @@ import x from '@/styles/app.module.css';
 import y from '@/styles/hoidanit.module.css';
 import AppTable from '@/components/app.table';
 import { useEffect } from 'react';
+import useSWR from 'swr';
 
 export default function Home() {
-    useEffect(() => {
-        const fetchData = async () => {
-            const res = await fetch('http://localhost:8000/blogs');
-            const data = await res.json();
-            console.log('chekc res: ', data);
-        };
-        fetchData();
-    }, []);
+    const fetcher = (url: string) => fetch(url).then((res) => res.json());
+
+    const { data, error, isLoading } = useSWR(
+        'http://localhost:8000/blogs',
+        fetcher,
+        {
+            revalidateIfStale: false,
+            revalidateOnFocus: false,
+            revalidateOnReconnect: false,
+        }
+    );
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         const res = await fetch('http://localhost:8000/blogs');
+    //         const data = await res.json();
+    //         console.log('chekc res: ', data);
+    //     };
+    //     fetchData();
+    // }, []);
+    console.log('check data: ', data);
     return (
         <div>
+            <div>{data?.length}</div>
             <ul>
-                <li className={y['red']}>
-                    <Link href={'/facebook'}>
-                        <span>Facebook</span>
-                    </Link>
-                </li>
                 <li className={x['red']}>
                     <Link href={'/facebook'}>
+                        <span className={y['red']}>Facebook</span>
+                    </Link>
+                </li>
+                <li style={{ margin: '20px 0' }}>
+                    <Link href={'/youtube'}>
                         <span>Youtube</span>
                     </Link>
                 </li>
-                <li>
-                    <Link href={'/facebook'}>
-                        <span>Facebook</span>
+                <li style={{ margin: '20px 0' }}>
+                    <Link href={'/tiktok'}>
+                        <span>Tiktok</span>
                     </Link>
                 </li>
             </ul>
