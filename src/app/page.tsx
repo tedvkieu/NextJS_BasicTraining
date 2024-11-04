@@ -3,7 +3,7 @@ import Link from 'next/link';
 import x from '@/styles/app.module.css';
 import y from '@/styles/hoidanit.module.css';
 import AppTable from '@/components/app.table';
-import { useEffect } from 'react';
+
 import useSWR from 'swr';
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
     );
 
     if (!data) {
-         return <div>loading....</div>
+        return <div>loading....</div>;
     }
     return (
         <div>
@@ -42,7 +42,8 @@ export default function Home() {
                     </Link>
                 </li>
             </ul>
-            <AppTable blogs={data} />
+            <AppTable blogs={data?.sort((a: any, b: any) => b.id - a.id)} />
+            {/* Sap xep theo ID */}
 
             {/* <div className={styles.description}>
                 <p>Hello world with Nextjs 13 & Hỏi Dân IT</p>
