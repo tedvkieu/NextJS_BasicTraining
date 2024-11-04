@@ -12,8 +12,7 @@ function AppTable(props: IProps) {
     console.log('check props: ', blogs);
     const [showModalCreate, setShowModalCreate] = useState(false);
 
-    const handleShow = () => {};
-
+  
     return (
         <>
             <div
