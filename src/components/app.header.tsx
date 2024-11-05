@@ -17,14 +17,8 @@ const AppHeader = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Link href={'/facebook'} className="nav-link">
-                            Facebook
-                        </Link>
-                        <Link href={'/youtube'} className="nav-link">
-                            Youtube
-                        </Link>
-                        <Link href={'/tiktok'} className="nav-link">
-                            Tik tok
+                        <Link href={'/blogs'} className="nav-link">
+                            Blogs
                         </Link>
 
                         <Nav.Link href={'#link'}>Link</Nav.Link>

@@ -4,6 +4,7 @@ import Table from 'react-bootstrap/Table';
 import CreateModal from './create.modal';
 import { useState } from 'react';
 import UpdateModal from './update.modal';
+import Link from 'next/link';
 interface IProps {
     blogs: IBlog[];
 }
@@ -12,7 +13,7 @@ function AppTable(props: IProps) {
     const { blogs } = props;
     const [showModalCreate, setShowModalCreate] = useState(false);
     const [showModalUpdate, setShowModalUpdate] = useState(false);
-    const [data, setData] = useState<IBlog|null>(null);
+    const [data, setData] = useState<IBlog | null>(null);
 
     return (
         <>
@@ -43,7 +44,11 @@ function AppTable(props: IProps) {
                                 <td>{blog.title}</td>
                                 <td>{blog.author}</td>
                                 <td>
-                                    <Button variant="primary">View</Button>
+                                    <Button variant="primary">
+                                        <Link href={`/blogs/${blog.id}`}>
+                                            View
+                                        </Link>
+                                    </Button>
                                     <Button
                                         className="mx-3"
                                         variant="warning"
@@ -68,7 +73,7 @@ function AppTable(props: IProps) {
                 showModalUpdate={showModalUpdate}
                 setShowModalUpdate={setShowModalUpdate}
                 data={data}
-                setData ={setData}
+                setData={setData}
             />
         </>
     );
