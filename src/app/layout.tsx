@@ -1,3 +1,4 @@
+'use client';
 import './globals.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Inter } from 'next/font/google';
@@ -6,6 +7,7 @@ import AppFooter from '@/components/app.footer';
 const inter = Inter({ subsets: ['latin'] });
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Container } from 'react-bootstrap';
 
 export const metadata = {
     title: 'Create Next App',
@@ -24,7 +26,10 @@ export default function RootLayout({
                 
                 <footer>Footer duong van kieu</footer> */}
                 <AppHeader />
-                <div className="container"> {children}</div>
+                <Container style={{ minHeight: 'calc(100vh - 106px)' }}>
+                    {children}
+                </Container>
+
                 <AppFooter />
                 <ToastContainer
                     position="top-right"

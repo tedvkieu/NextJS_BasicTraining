@@ -44,10 +44,10 @@ function AppTable(props: IProps) {
                                 <td>{blog.title}</td>
                                 <td>{blog.author}</td>
                                 <td>
-                                    <Button variant="primary">
-                                        <Link href={`/blogs/${blog.id}`}>
-                                            View
-                                        </Link>
+                                    <Button
+                                        variant="primary"
+                                        href={`/blogs/${blog.id}`}>
+                                        View
                                     </Button>
                                     <Button
                                         className="mx-3"
